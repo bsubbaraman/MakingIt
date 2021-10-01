@@ -1,2 +1,1 @@
-# MakingIt
-documentation for HCDE 548 Making It: Research Through Digital Design and Fabrication
+HCDE 598 Special Topics Digital Fabrication
