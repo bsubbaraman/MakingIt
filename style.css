@@ -234,14 +234,21 @@ p {
   margin-right: 5%;
 }
 
-pre code {
+code {
+  font-family: Consolas,"courier new";
+  color: #333;
+  background-color: #f1f1f1;
+  padding: 2px;
+}
+
+/* pre code {
   background-color: #333;
   color: #eee;
   border: 1px solid #999;
   display: block;
   margin-left: 5%;
   margin-right: 5%;
-}
+} */
 
 figure {
   display: inline-block;
