@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Tiny44-rescue:AVR-ISP-6-Connector J2
-U 1 1 61812338
-P 3050 4550
-F 0 "J2" H 2721 4646 50  0000 R CNN
-F 1 "AVR-ISP-6" H 2721 4555 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical_SMD" V 2800 4600 50  0001 C CNN
-F 3 " ~" H 1775 4000 50  0001 C CNN
-	1    3050 4550
-	1    0    0    -1  
-$EndComp
-$Comp
 L Regulator_Linear:LM3480-5.0 U1
 U 1 1 618137DB
 P 6500 2000
@@ -57,8 +46,6 @@ F 3 "~" H 6850 2300 50  0001 C CNN
 	1    6850 2300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5600 4200 5900 4200
 $Comp
 L power:GND #PWR0101
 U 1 1 61816E6E
@@ -87,8 +74,6 @@ Wire Wire Line
 	5000 4750 5000 4500
 Wire Wire Line
 	5600 3500 5900 3500
-Wire Wire Line
-	5600 3600 5900 3600
 Wire Wire Line
 	6200 2000 5900 2000
 Wire Wire Line
@@ -204,10 +189,6 @@ Wire Wire Line
 	3450 4450 3650 4450
 Wire Wire Line
 	3450 4350 3650 4350
-NoConn ~ 5600 4100
-NoConn ~ 5600 4000
-NoConn ~ 5600 3900
-NoConn ~ 5600 3700
 NoConn ~ 5600 3100
 Text Label 3500 4350 0    50   ~ 0
 MISO
@@ -217,10 +198,6 @@ Text Label 3500 4550 0    50   ~ 0
 SCK
 Text Label 3500 4650 0    50   ~ 0
 RESET
-Text Label 5700 4200 0    50   ~ 0
-RESET
-Text Label 5700 3600 0    50   ~ 0
-MOSI
 Text Label 5700 3500 0    50   ~ 0
 MISO
 Text Label 5700 3400 0    50   ~ 0
@@ -236,17 +213,6 @@ F 2 "LED_SMD:LED_1206_3216Metric" H 6200 3150 50  0001 C CNN
 F 3 "~" H 6200 3150 50  0001 C CNN
 	1    6200 3150
 	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R_Small_US R2
-U 1 1 6181FB39
-P 6650 3150
-F 0 "R2" H 6718 3196 50  0000 L CNN
-F 1 "1k" H 6718 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" H 6650 3150 50  0001 C CNN
-F 3 "~" H 6650 3150 50  0001 C CNN
-	1    6650 3150
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:LED D2
@@ -274,17 +240,6 @@ Wire Wire Line
 	5600 3200 6050 3200
 Wire Wire Line
 	6050 3200 6050 3150
-$Comp
-L Tiny44-rescue:ATtiny44A-SSU-MCU_Microchip_ATtiny U2
-U 1 1 6181189F
-P 5000 3600
-F 0 "U2" H 4470 3646 50  0000 R CNN
-F 1 "ATtiny44A-SSU" H 4470 3555 50  0000 R CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5000 3600 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 5000 3600 50  0001 C CNN
-	1    5000 3600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5600 3300 6050 3300
 Wire Wire Line
@@ -294,12 +249,12 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0108
 U 1 1 618225A4
-P 6900 3350
-F 0 "#PWR0108" H 6900 3100 50  0001 C CNN
-F 1 "GND" H 6905 3177 50  0000 C CNN
-F 2 "" H 6900 3350 50  0001 C CNN
-F 3 "" H 6900 3350 50  0001 C CNN
-	1    6900 3350
+P 6900 3500
+F 0 "#PWR0108" H 6900 3250 50  0001 C CNN
+F 1 "GND" H 6905 3327 50  0000 C CNN
+F 2 "" H 6900 3500 50  0001 C CNN
+F 3 "" H 6900 3500 50  0001 C CNN
+	1    6900 3500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -309,12 +264,88 @@ Wire Wire Line
 Wire Wire Line
 	6750 3300 6900 3300
 Connection ~ 6900 3300
-Wire Wire Line
-	6900 3300 6900 3350
 Text Label 3300 2850 0    50   ~ 0
 VIN
 Text Label 6950 2000 0    50   ~ 0
 VCC
+Text Label 5700 3600 0    50   ~ 0
+MOSI
+Text Label 5700 4200 0    50   ~ 0
+RESET
+NoConn ~ 5600 3700
+NoConn ~ 5600 3900
+NoConn ~ 5600 4000
+NoConn ~ 5600 4100
 Wire Wire Line
-	5600 3400 5900 3400
+	5600 3600 5900 3600
+Wire Wire Line
+	5600 4200 5900 4200
+$Comp
+L MCU_Microchip_ATtiny:ATtiny44A-SSU U2
+U 1 1 6189C02F
+P 5000 3600
+F 0 "U2" H 4470 3646 50  0000 R CNN
+F 1 "ATtiny44A-SSU" H 4470 3555 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5000 3600 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 5000 3600 50  0001 C CNN
+	1    5000 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:AVR-ISP-6 J2
+U 1 1 618A2540
+P 3050 4550
+F 0 "J2" H 2721 4646 50  0000 R CNN
+F 1 "AVR-ISP-6" H 2721 4555 50  0000 R CNN
+F 2 "avr-isp:AVR-ISP-6" V 2800 4600 50  0001 C CNN
+F 3 " ~" H 1775 4000 50  0001 C CNN
+	1    3050 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 3400 6050 3450
+Wire Wire Line
+	5600 3400 6050 3400
+$Comp
+L Device:LED D3
+U 1 1 618A637A
+P 6200 3450
+F 0 "D3" H 6193 3195 50  0000 C CNN
+F 1 "LED" H 6193 3286 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 6200 3450 50  0001 C CNN
+F 3 "~" H 6200 3450 50  0001 C CNN
+	1    6200 3450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small_US R4
+U 1 1 618A66F4
+P 6650 3450
+F 0 "R4" H 6718 3496 50  0000 L CNN
+F 1 "1k" H 6718 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" H 6650 3450 50  0001 C CNN
+F 3 "~" H 6650 3450 50  0001 C CNN
+	1    6650 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R2
+U 1 1 6181FB39
+P 6650 3150
+F 0 "R2" H 6718 3196 50  0000 L CNN
+F 1 "1k" H 6718 3105 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" H 6650 3150 50  0001 C CNN
+F 3 "~" H 6650 3150 50  0001 C CNN
+	1    6650 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6350 3450 6550 3450
+Wire Wire Line
+	6900 3300 6900 3450
+Wire Wire Line
+	6750 3450 6900 3450
+Connection ~ 6900 3450
+Wire Wire Line
+	6900 3450 6900 3500
 $EndSCHEMATC
