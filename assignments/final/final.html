@@ -180,7 +180,7 @@
   on one half of the screen.
   <br><br>
   To translate these screen positions to stepper motor instructions, the code finds relative angles of the joints.
-  First we find the shoulder and create a reference vector pointing straight down. We can then define a vector pointing frame
+  First we find the shoulder and create a reference vector pointing straight down. We can then define a vector pointing from
   the shoulder to the elbow, and from the elbow to the wrist, and find the angle between each of these and the reference vector.
   I found that an absolute step value of 650 (i.e. 3.25 revolutions) for the elbow joint stepper brings the arm to 90 degrees, 
   so I use that to translate from  angle to step. The wrist joint needs to be additionally offset by the angle of the elow joint. I added some other bits
@@ -193,7 +193,7 @@
   
   <h3 id="demo">putting it all together</h3>
   A healthy dose of drama when putting everything together. While testing, I found that the steppers
-  vibrate and couse the whole fixture to move. I thought the stepper motors were heavy enough 
+  vibrate and cause the whole fixture to move. I thought the stepper motors were heavy enough 
   to keep it in place but it... danced right off the table. Surprisingly enough, 
   everything stayed in tact. I started clamping the fixture to the table after that. On Wednesday, my plan was to make some sort of 
   'stage', or something to hide the wires. But I ended up frying my boards :) so instead I milled & soldered two new ones.
